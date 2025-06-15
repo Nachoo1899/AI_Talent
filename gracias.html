@@ -3,49 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gracias por tu mensaje</title>
+  <title>Mensaje enviado</title>
   <style>
+    :root {
+      --color-principal: #2e7d32;
+      --color-fondo: #f4f6f8;
+      --color-texto: #333;
+      --color-boton-hover: #1b5e20;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f4f8;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--color-fondo);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       text-align: center;
     }
 
+    .contenedor {
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 90%;
+    }
+
     h1 {
-      color: #2e7d32;
-      margin-bottom: 10px;
+      color: var(--color-principal);
+      margin-bottom: 20px;
     }
 
     p {
-      color: #333;
+      color: var(--color-texto);
+      font-size: 1rem;
       margin-bottom: 30px;
     }
 
     a {
       display: inline-block;
-      padding: 10px 20px;
-      background-color: #2e7d32;
+      padding: 12px 24px;
+      background-color: var(--color-principal);
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
       font-weight: bold;
       transition: background-color 0.3s;
     }
 
     a:hover {
-      background-color: #1b5e20;
+      background-color: var(--color-boton-hover);
     }
   </style>
 </head>
 <body>
-  <h1>¡Gracias por tu mensaje!</h1>
-  <p>Nos pondremos en contacto con vos a la brevedad.</p>
-  <a href="index.html">Volver al inicio</a>
+  <div class="contenedor">
+    <h1>¡Gracias por tu mensaje!</h1>
+    <p>Tu consulta fue enviada correctamente.<br>Te responderemos a la brevedad.</p>
+    <a href="index.html">Volver al inicio</a>
+  </div>
 </body>
 </html>
