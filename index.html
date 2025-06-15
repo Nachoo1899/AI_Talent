@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Talent Solutions</title>
+<style>
+  /* Reset y base */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    background-color: #0b0c18; /* azul oscuro/negro */
+    color: #eee;
+    line-height: 1.6;
+  }
+  a {
+    color: #9a7de1; /* violeta */
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  /* Contenedor general */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  /* Header */
+  header {
+    background: #080916;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #9a7de1;
+    cursor: pointer;
+  }
+  nav a {
+    margin-left: 25px;
+    font-weight: 600;
+    color: #ccc;
+  }
+  nav a:hover {
+    color: #9a7de1;
+  }
+  /* Hero */
+  #hero {
+    padding: 80px 20px 60px;
+    text-align: center;
+    background: linear-gradient(135deg, #1a124a, #0b0c18);
+    border-radius: 12px;
+    margin-bottom: 60px;
+  }
+  #hero h1 {
+    font-size: 2.8rem;
+    color: #9a7de1;
+    margin-bottom: 15px;
+  }
+  #hero p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #ccc;
+  }
+  .btn-primary {
+    background-color: #6e54d0;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    margin: 10px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  .btn-primary:hover {
+    background-color: #9a7de1;
+  }
+  /* Secciones comunes */
+  section {
+    padding: 40px 20px;
+    margin-bottom: 60px;
+    background: #12132e;
+    border-radius: 10px;
+  }
+  section h2 {
+    color: #9a7de1;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  section p {
+    color: #ccc;
+    max-width: 800px;
+    margin-bottom: 25px;
+  }
+  ul.steps, ul.benefits, ul.faq {
+    list-style: none;
+    max-width: 850px;
+    margin-bottom: 30px;
+  }
+  ul.steps li, ul.benefits li {
+    background: #1e1f4e;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: #ddd;
+  }
+  ul.steps li::before {
+    content: "➡️ ";
+    font-weight: bold;
+  }
+  ul.benefits li::before {
+    content: "✔️ ";
+    font-weight: bold;
+  }
+  ul.faq li {
+    margin-bottom: 15px;
+  }
+  ul.faq strong {
+    color: #b1aaff;
+  }
+  /* Formulario Contacto */
+  form {
+    max-width: 600px;
+    margin-top: 20px;
+  }
+  form label {
+    display: block;
+    margin-bottom: 6px;
+    color: #bbb;
+  }
+  form input, form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+  }
+  form textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  form button {
+    background-color: #6e54d0;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  form button:hover {
+    background-color: #9a7de1;
+  }
+  /* Footer */
+  footer {
+    background: #080916;
+    padding: 15px 20px;
+    text-align: center;
+    color: #555;
+    font-size: 0.9rem;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    #hero h1 {
+      font-size: 2rem;
+    }
+    nav a {
+      margin-left: 15px;
+      font-size: 0.95rem;
+    }
+    .btn-primary {
+      padding: 12px 24px;
+      font-size: 1rem;
+      margin: 8px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="container" role="banner">
+  <div class="logo" tabindex="0">AI Talent Solutions</div>
+  <nav role="navigation" aria-label="Menú principal">
+    <a href="#prepMate">PrepMate AI</a>
+    <a href="#hireLens">HireLens AI</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main role="main" class="container">
+
+  <section id="hero" aria-label="Bienvenida">
+    <h1>Bienvenido a AI Talent Solutions</h1>
+    <p>La plataforma que potencia tu proceso de selección y preparación laboral con inteligencia artificial.</p>
+    <button class="btn-primary" onclick="document.getElementById('prepMate').scrollIntoView({behavior:'smooth'})">Entrenar con PrepMate AI</button>
+    <button class="btn-primary" onclick="document.getElementById('hireLens').scrollIntoView({behavior:'smooth'})">Filtrar CV con HireLens AI</button>
+  </section>
+
+  <!-- PrepMate AI -->
+  <section id="prepMate" aria-label="Simulación de entrevistas con PrepMate AI">
+    <h2>PrepMate AI – Tu Entrenador Virtual de Entrevistas</h2>
+    <p>Practicá tus entrevistas laborales cuando quieras, donde quieras. PrepMate AI te prepara con preguntas reales y feedback inmediato para que destaques.</p>
+
+    <ul class="steps" aria-label="Cómo funciona PrepMate AI">
+      <li>Elegí tu área o puesto de interés.</li>
+      <li>Respondé preguntas simuladas diseñadas para tu perfil profesional.</li>
+      <li>Recibí consejos claros para mejorar y aumentar tus chances de éxito.</li>
+    </ul>
+
+    <ul class="benefits" aria-label="Beneficios de PrepMate AI">
+      <li>Práctica ilimitada y a tu ritmo.</li>
+      <li>Feedback personalizado tras cada respuesta.</li>
+      <li>Escenarios reales basados en industrias actuales.</li>
+      <li>PrepMate AI aprende contigo y mejora tus simulaciones.</li>
+    </ul>
+
+    <button class="btn-primary" aria-label="Comenzar simulación con PrepMate AI">Comenzá tu simulación ahora</button>
+
+    <h3>Preguntas Frecuentes</h3>
+    <ul class="faq">
+      <li><strong>¿Necesito experiencia previa?</strong> No, PrepMate AI está diseñado para todos, desde recién graduados hasta profesionales con experiencia.</li>
+      <li><strong>¿Puedo practicar para cualquier puesto?</strong> Sí, ofrecemos simulaciones para múltiples áreas y roles.</li>
+      <li><strong>¿Cuánto dura cada simulación?</strong> Aproximadamente 10-15 minutos, pero podés pausar y volver cuando quieras.</li>
+      <li><strong>¿Qué pasa con mis datos?</strong> Tus respuestas son confidenciales y no se usan para otros fines sin tu permiso.</li>
+      <li><strong>¿Cómo me ayuda PrepMate AI?</strong> Te prepara con preguntas reales y feedback para que mejores tu desempeño en entrevistas reales.</li>
+    </ul>
+  </section>
+
+  <!-- HireLens AI -->
+  <section id="hireLens" aria-label="Filtrado de CVs con HireLens AI">
+    <h2>HireLens AI – La Inteligencia Artificial que Filtra tus CVs</h2>
+    <p>Optimiza tu proceso de selección con un análisis rápido y objetivo que te ayuda a elegir al mejor candidato.</p>
+
+    <ul class="steps" aria-label="Cómo funciona HireLens AI">
+      <li>Pegá el CV que querés analizar.</li>
+      <li>Indicá el perfil o puesto deseado (opcional).</li>
+      <li>Recibí un reporte detallado con fortalezas, debilidades y recomendaciones.</li>
+    </ul>
+
+    <ul class="benefits" aria-label="Beneficios de HireLens AI">
+      <li>Análisis automático en segundos.</li>
+      <li>Reduce sesgos en la selección.</li>
+      <li>Reportes fáciles de interpretar.</li>
+      <li>Compatible con múltiples formatos de CV.</li>
+      <li>Mejora la eficiencia del reclutamiento.</li>
+    </ul>
+
+    <button class="btn-primary" aria-label="Analizar CV con HireLens AI">Analizá un CV ahora</button>
+
+    <h3>Preguntas Frecuentes</h3>
+    <ul class="faq">
+      <li><strong>¿Qué tipo de CVs puedo analizar?</strong> Podés subir CVs en formato texto o PDF para un análisis completo.</li>
+      <li><strong>¿Se pueden comparar varios candidatos?</strong> Sí, podés analizar varios CVs y obtener comparativas detalladas.</li>
+      <li><strong>¿Cómo protege HireLens mis datos?</strong> Tratamos tus datos con estricta confidencialidad y no compartimos información sin permiso.</li>
+      <li><strong>¿Puedo personalizar los criterios de evaluación?</strong> Sí, podés ajustar los parámetros para que el análisis se enfoque en lo que más valorás.</li>
+      <li><strong>¿Necesito conocimientos técnicos para usarlo?</strong> No, HireLens AI es muy intuitivo y fácil de usar para cualquier persona.</li>
+    </ul>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" aria-label="Contacto">
+    <h2>Contacto</h2>
+    <p>¿Querés saber más? Enviános tus consultas y te responderemos a la brevedad.</p>
+    <form action="#" method="post" aria-label="Formulario de contacto">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Escribí tu consulta aquí..." required></textarea>
+
+      <button type="submit">Enviar</button>
+      <form action="https://formsubmit.co/ignaciopintosdsilva@gmail.com" method="POST"></form>
+    </form>
+  </section>
+
+</main>
+
+<footer role="contentinfo">
+  <p>© 2025 AI Talent Solutions. Todos los derechos reservados.</p>
+  <p><small>Aviso de privacidad y términos legales.</small></p>
+</footer>
+
+<!-- Scroll suave personalizado para menú -->
+<script>
+  // Selecciona todos los links internos del nav
+  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (!targetElement) return;
+
+      // Scroll suave con duración custom (aprox 700ms)
+      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 60; // offset para que no quede tapado por header
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      const duration = 700;
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      // Función easing para suavizar el scroll
+      function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+      }
+
+      requestAnimationFrame(animation);
+    });
+  });
+</script>
+
+</body>
+</html>
