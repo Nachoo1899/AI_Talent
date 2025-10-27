@@ -1,9 +1,9 @@
 const OPENAI_API_KEY = "TU_API_KEY";
 
-const chatWindow = document.querySelector(".hirelens-chat #chat-window");
-const userInput = document.querySelector(".hirelens-chat #user-input");
-const sendBtn = document.querySelector(".hirelens-chat #send-btn");
-const fileInput = document.querySelector(".hirelens-chat #file-input");
+const chatWindow = document.getElementById("chat-window");
+const userInput = document.getElementById("user-input");
+const sendBtn = document.getElementById("send-btn");
+const fileInput = document.getElementById("file-input");
 
 let context = [];
 let fileText = "";
@@ -18,11 +18,11 @@ sendBtn.addEventListener("click", async () => {
   await sendToBot(text);
 });
 
-userInput.addEventListener("keypress", async (e) => {
+userInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") sendBtn.click();
 });
 
-fileInput.addEventListener("change", async (e) => {
+fileInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
   if (!file) return;
 
@@ -48,7 +48,6 @@ async function sendToBot(userMsg) {
   ];
 
   if (fileText) messages.push({ role: "system", content: "Contenido del archivo:\n" + fileText });
-
   context.forEach(m => messages.push(m));
   messages.push({ role: "user", content: userMsg });
 
@@ -69,7 +68,6 @@ async function sendToBot(userMsg) {
     const botMsg = data.choices[0].message.content;
 
     addMessage("bot", botMsg);
-
     context.push({ role: "user", content: userMsg });
     context.push({ role: "assistant", content: botMsg });
   } catch (err) {
