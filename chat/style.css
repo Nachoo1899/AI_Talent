@@ -1,5 +1,6 @@
+/* Tipografía y fondo */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #0a0a0a;
   color: #fff;
   display: flex;
@@ -9,42 +10,107 @@ body {
 
 .chat-container {
   width: 100%;
-  max-width: 600px;
+  max-width: 650px;
   background: #1a1a1a;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px #000;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #000;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
+h2 {
+  text-align: center;
+  color: #00ffff;
+  margin-bottom: 10px;
+}
+
+/* Ventana de chat */
 #chat-window {
-  height: 400px;
+  height: 450px;
   overflow-y: auto;
-  border: 1px solid #333;
-  padding: 10px;
-  margin-bottom: 10px;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 15px;
   background: #121212;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
+/* Mensajes */
 .message {
-  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
 }
 
-.user { color: #00ffff; }
-.bot { color: #ffcc00; }
-
-input[type=text] {
-  width: calc(100% - 80px);
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  margin-right: 10px;
-}
-
-button {
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  background: #00ffff;
+.user {
+  align-self: flex-end;
+  background-color: #00ffff;
   color: #000;
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: #ffcc00;
+  color: #000;
+}
+
+/* Input y botón */
+.input-area {
+  display: flex;
+  gap: 10px;
+}
+
+#user-input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+}
+
+#send-btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #00ffff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#send-btn:hover {
+  background-color: #00cccc;
+}
+
+/* Subida de archivos */
+.file-upload {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.file-upload input[type="file"] {
+  border-radius: 8px;
+  padding: 5px;
   cursor: pointer;
 }
+
+/* Scroll personalizado */
+#chat-window::-webkit-scrollbar {
+  width: 8px;
+}
+#chat-window::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 4px;
+}
+#chat-window::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
