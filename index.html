@@ -97,6 +97,8 @@
   background-color: #00cccc;
 }
 
+  
+
   /* Secciones comunes */
   section {
     padding: 40px 20px;
@@ -270,9 +272,17 @@
       <li>Mejora la eficiencia del reclutamiento.</li>
     </ul>
 
-  <a href="chat/index.html" target="_blank">
-  <button>Abrí chat</button>
-</a>
+  <button class="btn-primary" id="open-chat">Analizá un CV ahora</button>
+
+<div id="chat-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999;">
+  <iframe src="chat/index.html" style="width:90%; height:90%; margin:5% auto; display:block; border:none; border-radius:15px;"></iframe>
+  <button id="close-chat" style="position:absolute; top:20px; right:20px; padding:10px 15px; border:none; border-radius:10px; background:#00ffff; font-weight:bold; cursor:pointer;">Cerrar</button>
+</div>
+
+<script>
+  document.getElementById("open-chat").onclick = () => document.getElementById("chat-modal").style.display = "block";
+  document.getElementById("close-chat").onclick = () => document.getElementById("chat-modal").style.display = "none";
+</script>
 
     <h3>Preguntas Frecuentes</h3>
     <ul class="faq">
@@ -354,5 +364,6 @@
 
 </body>
 </html>
+
 
 
