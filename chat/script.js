@@ -1,13 +1,12 @@
-// ⚠️ REEMPLAZÁ TU_API_KEY con tu key de OpenAI
 const OPENAI_API_KEY = "TU_API_KEY";
 
-const chatWindow = document.getElementById("chat-window");
-const userInput = document.getElementById("user-input");
-const sendBtn = document.getElementById("send-btn");
-const fileInput = document.getElementById("file-input");
+const chatWindow = document.querySelector(".hirelens-chat #chat-window");
+const userInput = document.querySelector(".hirelens-chat #user-input");
+const sendBtn = document.querySelector(".hirelens-chat #send-btn");
+const fileInput = document.querySelector(".hirelens-chat #file-input");
 
-let context = []; // historial
-let fileText = ""; // texto del archivo
+let context = [];
+let fileText = "";
 
 sendBtn.addEventListener("click", async () => {
   const text = userInput.value.trim();
@@ -77,3 +76,5 @@ async function sendToBot(userMsg) {
     addMessage("bot", "Error al comunicarse con el modelo: " + err.message);
   }
 }
+
+
