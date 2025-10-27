@@ -1,5 +1,5 @@
-/* Tipografía y fondo */
-body {
+.hirelens-chat body,
+.hirelens-chat {
   font-family: 'Roboto', sans-serif;
   background-color: #0a0a0a;
   color: #fff;
@@ -8,7 +8,7 @@ body {
   padding: 20px;
 }
 
-.chat-container {
+.hirelens-chat .chat-container {
   width: 100%;
   max-width: 650px;
   background: #1a1a1a;
@@ -20,14 +20,14 @@ body {
   gap: 15px;
 }
 
-h2 {
+.hirelens-chat h2 {
   text-align: center;
   color: #00ffff;
   margin-bottom: 10px;
 }
 
 /* Ventana de chat */
-#chat-window {
+.hirelens-chat #chat-window {
   height: 450px;
   overflow-y: auto;
   border: 2px solid #333;
@@ -40,32 +40,32 @@ h2 {
 }
 
 /* Mensajes */
-.message {
+.hirelens-chat .message {
   padding: 8px 12px;
   border-radius: 10px;
   max-width: 80%;
   word-wrap: break-word;
 }
 
-.user {
+.hirelens-chat .user {
   align-self: flex-end;
   background-color: #00ffff;
   color: #000;
 }
 
-.bot {
+.hirelens-chat .bot {
   align-self: flex-start;
   background-color: #ffcc00;
   color: #000;
 }
 
 /* Input y botón */
-.input-area {
+.hirelens-chat .input-area {
   display: flex;
   gap: 10px;
 }
 
-#user-input {
+.hirelens-chat #user-input {
   flex: 1;
   padding: 12px;
   border-radius: 10px;
@@ -73,7 +73,7 @@ h2 {
   font-size: 15px;
 }
 
-#send-btn {
+.hirelens-chat #send-btn {
   padding: 12px 20px;
   border-radius: 10px;
   border: none;
@@ -84,33 +84,33 @@ h2 {
   transition: 0.3s;
 }
 
-#send-btn:hover {
+.hirelens-chat #send-btn:hover {
   background-color: #00cccc;
 }
 
 /* Subida de archivos */
-.file-upload {
+.hirelens-chat .file-upload {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.file-upload input[type="file"] {
+.hirelens-chat .file-upload input[type="file"] {
   border-radius: 8px;
   padding: 5px;
   cursor: pointer;
 }
 
 /* Scroll personalizado */
-#chat-window::-webkit-scrollbar {
+.hirelens-chat #chat-window::-webkit-scrollbar {
   width: 8px;
 }
-#chat-window::-webkit-scrollbar-thumb {
+.hirelens-chat #chat-window::-webkit-scrollbar-thumb {
   background: #00ffff;
   border-radius: 4px;
 }
-#chat-window::-webkit-scrollbar-track {
+.hirelens-chat #chat-window::-webkit-scrollbar-track {
   background: #1a1a1a;
 }
 
