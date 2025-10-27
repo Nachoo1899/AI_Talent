@@ -6,7 +6,7 @@ const userInput = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
 const fileInput = document.getElementById("file-input");
 
-let context = []; // historial de mensajes
+let context = []; // historial
 let fileText = ""; // texto del archivo
 
 sendBtn.addEventListener("click", async () => {
@@ -17,6 +17,10 @@ sendBtn.addEventListener("click", async () => {
   userInput.value = "";
 
   await sendToBot(text);
+});
+
+userInput.addEventListener("keypress", async (e) => {
+  if (e.key === "Enter") sendBtn.click();
 });
 
 fileInput.addEventListener("change", async (e) => {
@@ -44,14 +48,9 @@ async function sendToBot(userMsg) {
     { role: "system", content: "Sos HireLens AI, un asistente experto en analizar CVs." },
   ];
 
-  // agregar archivo al contexto si existe
-  if (fileText) {
-    messages.push({ role: "system", content: "Contenido del archivo subido:\n" + fileText });
-  }
+  if (fileText) messages.push({ role: "system", content: "Contenido del archivo:\n" + fileText });
 
-  // agregar historial del chat
   context.forEach(m => messages.push(m));
-
   messages.push({ role: "user", content: userMsg });
 
   try {
@@ -72,10 +71,8 @@ async function sendToBot(userMsg) {
 
     addMessage("bot", botMsg);
 
-    // guardar en historial
     context.push({ role: "user", content: userMsg });
     context.push({ role: "assistant", content: botMsg });
-
   } catch (err) {
     addMessage("bot", "Error al comunicarse con el modelo: " + err.message);
   }
